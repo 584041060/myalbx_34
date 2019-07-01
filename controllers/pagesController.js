@@ -1,13 +1,18 @@
 // 引入fs
-const fs = require('fs')
+// const fs = require('fs')
 
 module.exports.getIndexPage = (req, res) => {
-  fs.readFile(__dirname + '/../views/index.html', (err, data) => {
-    if (err) {
-      console.log(err)
-      res.end('404')
-    } else {
-      res.end(data)
-    }
-  })
+  res.render('index.ejs')
+}
+module.exports.getListxPage = (req, res) => {
+  res.render('list.ejs')
+}
+module.exports.getDetailPage = (req, res) => {
+  res.render('detail.ejs')
+}
+
+
+// 后台页面读取
+module.exports.getAdminPage = (req, res) => {
+  res.render('admin/index.ejs')
 }
